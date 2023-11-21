@@ -1,10 +1,10 @@
 // pages/criar-conta.js
 import React from 'react';
 import Link from 'next/link';
-import Header from './components/Header';
-import Navigation from './components/Navigation';
+import Header from '../components/Header';
+import Navigation from '../components/Navigation';
 
-const CriarContaPage = () => {
+const CriarConta = () => {
   const criarConta = () => {
     alert('Conta criada com sucesso!');
   };
@@ -50,4 +50,4 @@ const CriarContaPage = () => {
   );
 };
 
-export default CriarContaPage;
+export default CriarConta;

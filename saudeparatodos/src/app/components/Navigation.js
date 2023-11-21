@@ -7,7 +7,7 @@ const Navigation = () => {
     <nav>
       <ul>
         <li><Link href="/">Página Inicial</Link></li>
-        <li><Link href="/criar-conta">Crie uma Conta</Link></li>
+        <li><Link href="/criarConta.js">Crie uma Conta</Link></li>
         <li><Link href="/login">Login</Link></li>
       </ul>
     </nav>
