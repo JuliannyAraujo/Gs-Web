@@ -1,13 +1,13 @@
 // pages/criar-conta.js
 import React from 'react';
 import Link from 'next/link';
-import Header from '../components/Header';
-import Navigation from '../components/Navigation';
+import Header from '../../components/Header';
+import Navigation from '../../Navigation';
 
-const CriarConta = () => {
-  const criarConta = () => {
-    alert('Conta criada com sucesso!');
-  };
+export default function CriarConta () {
+  // const criarConta = () => {
+  //   alert('Conta criada com sucesso!');
+  // };
 
   return (
     <div>
@@ -47,7 +47,5 @@ const CriarConta = () => {
         <p>Já tem uma conta? <Link href="/login"><a>Faça login</a></Link></p>
       </section>
     </div>
-  );
-};
-
-export default CriarConta;
+  )
+}
