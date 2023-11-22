@@ -1,0 +1,10 @@
+/* styles.module.css */
+
+.link {
+    padding: 10px;
+    background: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  

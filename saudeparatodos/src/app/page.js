@@ -1,6 +1,8 @@
+
+
 import Image from 'next/image'
 import Header from './components/Header'
-import Link from 'next/link'
+import CustomLink from './CustomLink';
 
 export default function Home() {
   return (
@@ -11,9 +13,9 @@ export default function Home() {
       <Header />
       <nav>
         <ul style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <li><Link href="/" passHref><a>Página Inicial</a></Link></li>
-          <li><Link href="/login" passHref><a>Login</a></Link></li>
-          <li><Link href="/criarConta" passHref><a>Crie uma Conta</a></Link></li>
+          <li><CustomLink href="/">Página Inicial</CustomLink></li>
+          <li><CustomLink href="/login">Login</CustomLink></li>
+          <li><CustomLink href="/criarConta">Crie uma Conta</CustomLink></li>
         </ul>
       </nav>
       <section id="content">
