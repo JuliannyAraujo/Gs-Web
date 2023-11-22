@@ -4,7 +4,14 @@ import Link from 'next/link';
 // Componente de Logo
 const Logo = () => (
   <div style={logoStyle}>
-    <img src="/logo.img.png" alt="Logo do Grupo" width={50} height={50} />
+    <img src="/logo.png" alt="Logo do Grupo" width={50} height={50} />
+  </div>
+);
+
+// Componente de Imagem de Saúde
+const SaudeImage = () => (
+  <div style={saudeImageStyle}>
+    <img src="/saude.png" alt="Imagem Saúde" width={200} height={200} />
   </div>
 );
 
@@ -13,7 +20,7 @@ export default function Home() {
     <>
       <Header />
       <nav style={navStyle}>
-        <Logo /> {/* Adiciona o componente de Logo */}
+        <Logo />
         <ul style={linkContainerStyle}>
           <li><Link href="/" style={linkStyle}>Página Inicial</Link></li>
           <li><Link href="/criarConta" style={linkStyle}>Crie uma Conta</Link></li>
@@ -25,6 +32,7 @@ export default function Home() {
         <p style={paragraphStyle}>
           A saúde é um aspecto fundamental da vida. Manter um estilo de vida saudável contribui para o bem-estar físico e mental. Nossa missão é proporcionar a todos o acesso a informações e serviços de saúde de qualidade. Junte-se a nós nessa jornada pela saúde para todos!
         </p>
+        <SaudeImage /> {/* Adiciona o componente de Imagem de Saúde */}
       </section>
     </>
   );
@@ -68,4 +76,9 @@ const paragraphStyle = {
 
 const logoStyle = {
   marginLeft: 'auto', // Move para o canto direito
+};
+
+// Estilo adicional para a Imagem de Saúde
+const saudeImageStyle = {
+  marginTop: '20px',
 };
