@@ -11,7 +11,7 @@ const Logo = () => (
 // Componente de Imagem de Saúde
 const SaudeImage = () => (
   <div style={saudeImageContainerStyle}>
-    <img src="/saude.png" alt="Imagem Saúde" width={600} height={300} />
+    <img src="/saude.png" alt="Imagem Saúde" width={700} height={500} />
   </div>
 );
 
