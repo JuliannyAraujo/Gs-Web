@@ -4,7 +4,7 @@ import Header from './components/Header';
 // Estilos
 const navStyle = {
   background: '#d2f4e8', // Verde claro
-  padding: '5px',
+  padding: '1px',
   display: 'flex',
   justifyContent: 'space-between',
 };
@@ -22,13 +22,13 @@ const linkStyle = {
 };
 
 const contentStyle = {
-  padding: '20px',
+  padding: '15px',
   textAlign: 'center',
 };
 
 const titleStyle = {
   color: '#4CAF50', // Verde escuro
-  fontSize: '26px',
+  fontSize: '28px',
 };
 
 const paragraphStyle = {
@@ -44,14 +44,14 @@ const logoStyle = {
 };
 
 const saudeImageContainerStyle = {
-  marginTop: '80px',
+  marginTop: '50px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
 };
 
 const whyHealthStyle = {
-  marginTop: '40px',
+  marginTop: '20px',
 };
 
 const whyHealthTitleStyle = {
@@ -114,7 +114,7 @@ export default function Home() {
           A saúde é um aspecto fundamental da vida. Manter um estilo de vida saudável contribui para o bem-estar físico e mental. Nossa missão é proporcionar a todos o acesso a informações e serviços de saúde de qualidade. Junte-se a nós nessa jornada pela saúde para todos!
         </p>
         <div style={saudeImageContainerStyle}>
-          <img src="/saude.png" alt="Imagem Saúde" width={700} height={500} />
+          <img src="/saude.png" alt="Imagem Saúde" width={400} height={400} />
         </div>
         <div style={whyHealthStyle}>
           <h2 style={whyHealthTitleStyle}>Por que a saúde é importante para todos?</h2>
