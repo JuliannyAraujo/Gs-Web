@@ -1,13 +1,12 @@
-// pages/criar-conta.js
 import React from 'react';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Navigation from '../../Navigation';
 
-export default function CriarConta () {
-  // const criarConta = () => {
-  //   alert('Conta criada com sucesso!');
-  // };
+export default function CriarConta() {
+  const criarConta = () => {
+    alert('Conta criada com sucesso!');
+  };
 
   return (
     <div>
@@ -40,12 +39,19 @@ export default function CriarConta () {
           <label htmlFor="senha">Senha:</label>
           <input type="password" id="senha" name="senha" required />
 
-          <button type="button" onClick={criarConta}>Criar Conta</button>
+          <button type="button" onClick={criarConta}>
+            Criar Conta
+          </button>
         </form>
 
         {/* Adiciona link para ir para a página de login usando Next.js Link */}
-        <p>Já tem uma conta? <Link href="/login"><a>Faça login</a></Link></p>
+        <p>
+          Já tem uma conta?{' '}
+          <Link href="/login">
+            <a>Faça login</a>
+          </Link>
+        </p>
       </section>
     </div>
-  )
+  );
 }

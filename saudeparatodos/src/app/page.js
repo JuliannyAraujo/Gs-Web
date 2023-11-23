@@ -1,5 +1,5 @@
-import Header from './components/Header';
 import Link from 'next/link';
+import Header from './components/Header';
 
 // Estilos
 const navStyle = {
@@ -91,11 +91,21 @@ export default function Home() {
       <nav style={navStyle}>
         <div style={logoStyle}>
           <img src="/logo.png.png" alt="Logo do Grupo" width={80} height={80} />
-          <Link href="/beneficios" style={linkStyle}>Benefícios</Link>
+          <Link href="/beneficios" style={linkStyle}>
+            Benefícios
+          </Link>
         </div>
         <ul style={linkContainerStyle}>
-          <li><Link href="/criarConta" style={linkStyle}>Crie uma Conta</Link></li>
-          <li><Link href="/login" style={linkStyle}>Login</Link></li>
+          <li>
+            <Link href="/criarConta" style={linkStyle}>
+              Crie uma Conta
+            </Link>
+          </li>
+          <li>
+            <Link href="/login" style={linkStyle}>
+              Login
+            </Link>
+          </li>
         </ul>
       </nav>
       <section id="content" style={contentStyle}>

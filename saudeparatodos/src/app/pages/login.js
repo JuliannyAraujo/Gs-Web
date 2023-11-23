@@ -19,7 +19,7 @@ export default function LoginPage() {
           <label htmlFor="senha">Senha:</label>
           <input type="password" id="senha" name="senha" required />
 
-          <button type="button" onClick={fazerLogin()}>Login</button>
+          <button type="button" onClick={fazerLogin}>Login</button>
         </form>
       </section>
 
