@@ -29,7 +29,7 @@ const Beneficios = () => (
     <Header />
     <nav>
       <Link href="/">
-        <a>Voltar para a Página Inicial</a>
+        Voltar para a Página Inicial
       </Link>
     </nav>
     <h1>O que o Saúde para Todos vai te beneficiar?</h1>

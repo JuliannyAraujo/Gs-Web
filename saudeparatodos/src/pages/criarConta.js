@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Header from '../../components/Header';
-import Navigation from '../../Navigation';
+import Header from '@/app/components/Header';
+import Navigation from './Navigation';
+
+
+
 
 export default function CriarConta() {
   const criarConta = () => {
@@ -11,8 +14,8 @@ export default function CriarConta() {
 
   return (
     <div>
-      <Header />
-      <Navigation />
+      <Header/>
+      <Navigation/>
       <section id="content">
         <h2>Crie uma Conta</h2>
         <form id="crie-uma-conta-form">
@@ -27,7 +30,7 @@ export default function CriarConta() {
         <p>
           Já tem uma conta?{' '}
           <Link href="/login">
-            <a>Faça login</a>
+            Faça login
           </Link>
         </p>
       </section>

@@ -6,19 +6,19 @@ const Navigation = () => {
   return (
     <nav>
       <Link href="/">
-        <a>Página Inicial</a>
+        Página Inicial
       </Link>
       {' | '}
       <Link href="/beneficios">
-        <a>Benefícios</a>
+        Benefícios
       </Link>
       {' | '}
       <Link href="/criarConta">
-        <a>Crie uma Conta</a>
+        Crie uma Conta
       </Link>
       {' | '}
       <Link href="/login">
-        <a>Login</a>
+        Login
       </Link>
     </nav>
   );

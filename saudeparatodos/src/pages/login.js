@@ -23,7 +23,7 @@ export default function LoginPage() {
         </form>
       </section>
 
-      <p>Ainda não tem uma conta? <Link href="/criarConta"><a>Crie uma conta</a></Link></p>
+      <p>Ainda não tem uma conta? <Link href="/criarConta">Crie uma conta</Link></p>
     </div>
   )
 }
