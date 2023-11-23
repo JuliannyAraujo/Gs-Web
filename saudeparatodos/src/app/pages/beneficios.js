@@ -1,6 +1,6 @@
 // pages/Beneficios.js
 
-import Header from '../components/Header';
+import Header from '../../components/Header';
 import Link from 'next/link';
 
 const PropositoCentral = () => (
