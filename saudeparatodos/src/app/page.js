@@ -21,6 +21,12 @@ const linkStyle = {
   fontSize: '18px',
 };
 
+const linkSaibaMaisStyle = {
+  color: '#4CAF50', // Verde escuro
+  textDecoration: 'underline',
+  cursor: 'pointer',
+};
+
 const contentStyle = {
   padding: '15px',
   textAlign: 'center',
@@ -84,56 +90,59 @@ const iconStyle = {
   marginBottom: '15px',
 };
 
-export default function Home() {
-  return (
-    <>
-      <Header />
-      <nav style={navStyle}>
-        <div style={logoStyle}>
-          <img src="/logo.png.png" alt="Logo do Grupo" width={80} height={80} />
-          <Link href="/beneficios" style={linkStyle}>
-            Benefícios
+const Home = () => (
+  <>
+    <Header />
+    <nav style={navStyle}>
+      <div style={logoStyle}>
+        <img src="/logo.png.png" alt="Logo do Grupo" width={80} height={80} />
+        <Link href="/beneficios" style={linkStyle}>
+          Benefícios
+        </Link>
+      </div>
+      <ul style={linkContainerStyle}>
+        <li>
+          <Link href="/criarConta" style={linkStyle}>
+            Crie uma Conta
           </Link>
-        </div>
-        <ul style={linkContainerStyle}>
-          <li>
-            <Link href="/criarConta" style={linkStyle}>
-              Crie uma Conta
-            </Link>
-          </li>
-          <li>
-            <Link href="/login" style={linkStyle}>
-              Login
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <section id="content" style={contentStyle}>
-        <h1 style={titleStyle}>Bem-vindo ao Saúde para Todos!</h1>
-        <p style={paragraphStyle}>
-          A saúde é um aspecto fundamental da vida. Manter um estilo de vida saudável contribui para o bem-estar físico e mental. Nossa missão é proporcionar a todos o acesso a informações e serviços de saúde de qualidade. Junte-se a nós nessa jornada pela saúde para todos!
-        </p>
-        <div style={saudeImageContainerStyle}>
-          <img src="/saude.png" alt="Imagem Saúde" width={400} height={400} />
-        </div>
-        <div style={whyHealthStyle}>
-          <h2 style={whyHealthTitleStyle}>Por que a saúde é importante para todos?</h2>
-          <div style={answerContainerStyle}>
-            <div style={answerStyle}>
-              <div style={iconStyle}>1</div>
-              <p>Cultivar hábitos saudáveis, como uma alimentação equilibrada e a prática regular de atividades físicas, é crucial para promover o bem-estar físico e mental ao longo da vida.</p>
-            </div>
-            <div style={answerStyle}>
-              <div style={iconStyle}>2</div>
-              <p> Reconhecer a importância da saúde é fundamental, pois ela é um aspecto essencial de nossa existência.</p>
-            </div>
-            <div style={answerStyle}>
-              <div style={iconStyle}>3</div>
-              <p>Nossa missão é fornecer acesso a informações e serviços de saúde de alta qualidade, visando o cuidado e o bem-estar de toda a comunidade.</p>
-            </div>
+        </li>
+        <li>
+          <Link href="/login" style={linkStyle}>
+            Login
+          </Link>
+        </li>
+      </ul>
+    </nav>
+    <section id="content" style={contentStyle}>
+      <h1 style={titleStyle}>Bem-vindo ao Saúde para Todos!</h1>
+      <p style={paragraphStyle}>
+        A saúde é um aspecto fundamental da vida. Manter um estilo de vida saudável contribui para o bem-estar físico e mental. Nossa missão é proporcionar a todos o acesso a informações e serviços de saúde de qualidade. Junte-se a nós nessa jornada pela saúde para todos!{' '}
+        <Link href="/sobre">
+          <span style={linkSaibaMaisStyle}>Saiba mais!</span>
+        </Link>
+      </p>
+      <div style={saudeImageContainerStyle}>
+        <img src="/saude.png" alt="Imagem Saúde" width={400} height={400} />
+      </div>
+      <div style={whyHealthStyle}>
+        <h2 style={whyHealthTitleStyle}>Por que a saúde é importante para todos?</h2>
+        <div style={answerContainerStyle}>
+          <div style={answerStyle}>
+            <div style={iconStyle}>1</div>
+            <p>Cultivar hábitos saudáveis, como uma alimentação equilibrada e a prática regular de atividades físicas, é crucial para promover o bem-estar físico e mental ao longo da vida.</p>
+          </div>
+          <div style={answerStyle}>
+            <div style={iconStyle}>2</div>
+            <p> Reconhecer a importância da saúde é fundamental, pois ela é um aspecto essencial de nossa existência.</p>
+          </div>
+          <div style={answerStyle}>
+            <div style={iconStyle}>3</div>
+            <p>Nossa missão é fornecer acesso a informações e serviços de saúde de alta qualidade, visando o cuidado e o bem-estar de toda a comunidade.</p>
           </div>
         </div>
-      </section>
-    </>
-  );
-}
+      </div>
+    </section>
+  </>
+);
+
+export default Home;

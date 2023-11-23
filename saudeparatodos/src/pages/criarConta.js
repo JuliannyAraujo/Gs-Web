@@ -1,4 +1,3 @@
-// pages/criarConta.js
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/app/components/Header';
@@ -10,6 +9,7 @@ export default function CriarConta() {
   const [email, setEmail] = useState('');
   const [temConvenio, setTemConvenio] = useState(false);
   const [numeroCarteirinha, setNumeroCarteirinha] = useState('');
+  const [cpf, setCPF] = useState(''); // Adicione o estado para o CPF
   const [senha, setSenha] = useState('');
 
   const criarConta = () => {
@@ -37,6 +37,11 @@ export default function CriarConta() {
           <div className="form-group">
             <label htmlFor="email">E-mail:</label>
             <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" value={cpf} onChange={(e) => setCPF(e.target.value)} />
           </div>
 
           <div className="form-group">
