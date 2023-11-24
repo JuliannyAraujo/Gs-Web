@@ -1,6 +1,5 @@
 // pages/Beneficios.js
 import Link from 'next/link';
-import Header from '@/app/components/Header';
 import Navigation from './Navigation';
 
 const PropositoCentral = () => (
@@ -26,7 +25,6 @@ const ContribuicaoSignificativa = () => (
 
 const Beneficios = () => (
   <>
-    <Header />
     <Navigation />
     <div className="beneficios-container">
       <div className="beneficios-titulo-resposta">

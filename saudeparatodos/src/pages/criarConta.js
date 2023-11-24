@@ -1,78 +1,86 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Header from '@/app/components/Header';
 import Navigation from './Navigation';
+import { cadastrarPaciente } from '@/actions/cadastro';
 
 export default function CriarConta() {
-  const [nome, setNome] = useState('');
-  const [sobrenome, setSobrenome] = useState('');
-  const [email, setEmail] = useState('');
-  const [temConvenio, setTemConvenio] = useState(false);
-  const [numeroCarteirinha, setNumeroCarteirinha] = useState('');
-  const [cpf, setCPF] = useState(''); // Adicione o estado para o CPF
-  const [senha, setSenha] = useState('');
+  const [messagem, setMessage] = useState("")
 
-  const criarConta = () => {
-    // Lógica para criar a conta no servidor, se necessário
-    alert('Conta criada com sucesso!');
-  };
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const paciente = {
+      nome: formData.get('nome'),
+      cpf: formData.get('cpf'),
+      genero: formData.get('genero'),
+      email: formData.get('email'),
+      senha: formData.get('senha'),
+    };
+
+    console.log(paciente);
+
+    const resp = await cadastrarPaciente(paciente);
+
+    console.log(resp);
+
+    if (resp.error) {
+      setMessage(resp.error);
+      return;
+    }
+
+    redirect("/login");
+  }
 
   return (
     <div className="criar-conta">
-      <Header />
       <Navigation />
       <section id="content">
         <h2>Crie uma Conta</h2>
-        <form id="crie-uma-conta-form">
+        <form onSubmit={handleSubmit} id="crie-uma-conta-form">
           <div className="form-group">
-            <label htmlFor="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
+            <label htmlFor="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required />
           </div>
-
-          <div className="form-group">
-            <label htmlFor="sobrenome">Sobrenome:</label>
-            <input type="text" id="sobrenome" name="sobrenome" value={sobrenome} onChange={(e) => setSobrenome(e.target.value)} required />
-          </div>
-          {/* 
-          <div className="form-group">
-            <label htmlFor="email">E-mail:</label>
-            <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          </div> */}
 
           <div className="form-group">
             <label htmlFor="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" value={cpf} onChange={(e) => setCPF(e.target.value)} />
+            <input type="text" id="cpf" name="cpf" required />
           </div>
 
           <div className="form-group">
-            <label htmlFor="convenio">Possui Convênio?</label>
-            <input type="checkbox" id="convenio" name="convenio" checked={temConvenio} onChange={() => setTemConvenio(!temConvenio)} />
+            <label htmlFor="genero">Gênero:</label>
+            <select id="genero" name="genero" defaultValue="" required>
+              <option value="" disabled>Selecione</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
           </div>
 
-          {temConvenio && (
-            <div className="form-group">
-              <label htmlFor="carteirinha">Número da Carteirinha:</label>
-              <input type="text" id="carteirinha" name="carteirinha" value={numeroCarteirinha} onChange={(e) => setNumeroCarteirinha(e.target.value)} />
-            </div>
-          )}
+          <div className="form-group">
+            <label htmlFor="email">E-mail:</label>
+            <input type="text" id="email" name="email" required />
+          </div>
 
           <div className="form-group">
             <label htmlFor="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" value={senha} onChange={(e) => setSenha(e.target.value)} required />
+            <input type="password" id="senha" name="senha" required />
           </div>
 
-          <button type="button" onClick={criarConta}>
+          <button type='submit'>
             Criar Conta
           </button>
         </form>
 
-        {/* Adiciona link para ir para a página de login usando Next.js Link */}
+
         <p>
           Já tem uma conta?{' '}
           <Link href="/login">
             Faça login
           </Link>
         </p>
+
+        <h3>{messagem}</h3>
       </section>
 
       <style jsx>{`

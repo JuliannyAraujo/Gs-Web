@@ -1,9 +1,7 @@
-import Header from '@/app/components/Header';
 import Navigation from './Navigation';
 
 const Sobre = () => (
   <>
-    <Header />
     <Navigation />
     <div className="sobre-container">
       <div className="sobre-titulo">

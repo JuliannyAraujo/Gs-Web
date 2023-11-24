@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Header from './components/Header';
 // Estilos
 const navStyle = {
   background: '#d2f4e8', // Verde claro
@@ -91,7 +90,6 @@ const iconStyle = {
 
 const Home = () => (
   <>
-    <Header />
     <nav style={navStyle}>
       <div style={logoStyle}>
         <img src="/logo.png.png" alt="Logo do Grupo" width={80} height={80} />
@@ -100,16 +98,12 @@ const Home = () => (
         </Link>
       </div>
       <ul style={linkContainerStyle}>
-        <li>
-          <Link href="/criarConta" style={linkStyle}>
-            Crie uma Conta
-          </Link>
-        </li>
-        <li>
-          <Link href="/login" style={linkStyle}>
-            Login
-          </Link>
-        </li>
+        <Link href="/criarConta" style={linkStyle}>
+          Crie uma conta
+        </Link>
+        <Link href="/login" style={linkStyle}>
+          Login
+        </Link>
       </ul>
     </nav>
     <section id="content" style={contentStyle}>
@@ -140,7 +134,6 @@ const Home = () => (
           </div>
         </div>
       </div>
-      {/* <Footer/> */}
     </section>
   </>
 );
