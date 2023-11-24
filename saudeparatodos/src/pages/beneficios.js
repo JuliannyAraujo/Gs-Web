@@ -41,11 +41,7 @@ const Beneficios = () => (
         <AlternativasAtendimento />
         <ContribuicaoSignificativa />
       </div>
-      <div className="beneficios-nav">
-        <Link href="/" className="link-voltar">
-          Voltar para a Página Inicial
-        </Link>
-      </div>
+
     </div>
 
     <style jsx>{`

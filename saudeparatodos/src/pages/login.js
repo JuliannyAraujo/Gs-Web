@@ -13,8 +13,8 @@ export default function LoginPage() {
       <section id="content">
         <h2>Login</h2>
         <form id="login-form">
-          <label htmlFor="email">E-mail:</label>
-          <input type="email" id="email" name="email" required />
+          <label htmlFor="cpf">Digite seu cpf:</label>
+          <input type="cpf" id="cpf" name="cpf" required />
 
           <label htmlFor="senha">Senha:</label>
           <input type="password" id="senha" name="senha" required />

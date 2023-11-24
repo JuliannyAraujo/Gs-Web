@@ -1,4 +1,3 @@
-// components/Navigation.js
 import React from 'react';
 import Link from 'next/link';
 
@@ -6,20 +5,32 @@ const Navigation = () => {
   return (
     <nav>
       <Link href="/">
-        Página Inicial
+        <img src="/logo.png.png" alt="Logo" width={50} height={50} />
       </Link>
       {' | '}
       <Link href="/beneficios">
-        Benefícios
+        <span>Benefícios</span>
       </Link>
       {' | '}
       <Link href="/criarConta">
-        Crie uma Conta
+        <span>Crie uma Conta</span>
       </Link>
       {' | '}
       <Link href="/login">
-        Login
+        <span>Login</span>
       </Link>
+
+      <style jsx>{`
+        nav {
+          display: flex;
+          align-items: center;
+        }
+
+        span {
+          margin-right: 20px;
+          text-decoration: none;
+        }
+      `}</style>
     </nav>
   );
 };

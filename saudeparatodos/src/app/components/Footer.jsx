@@ -4,7 +4,9 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <p>Julianny Araujo Pereira - RM99554</p>
+      <hr/>
+      <p>criado por Saúde para todos&copy; Caio Cesar 99456   -   Julianny Araujo Pereira 99554   -  Jaqueline Martins 551744  -   Karen Vitória 99468   -  Matheus Matos 99792
+      </p>
     </footer>
   );
 };

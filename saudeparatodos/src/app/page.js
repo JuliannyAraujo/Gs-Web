@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Header from './components/Header';
-
 // Estilos
 const navStyle = {
   background: '#d2f4e8', // Verde claro
@@ -141,6 +140,7 @@ const Home = () => (
           </div>
         </div>
       </div>
+      {/* <Footer/> */}
     </section>
   </>
 );

@@ -33,11 +33,11 @@ export default function CriarConta() {
             <label htmlFor="sobrenome">Sobrenome:</label>
             <input type="text" id="sobrenome" name="sobrenome" value={sobrenome} onChange={(e) => setSobrenome(e.target.value)} required />
           </div>
-
+          {/* 
           <div className="form-group">
             <label htmlFor="email">E-mail:</label>
             <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          </div>
+          </div> */}
 
           <div className="form-group">
             <label htmlFor="cpf">CPF:</label>
