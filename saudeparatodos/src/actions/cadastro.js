@@ -5,7 +5,7 @@ export async function cadastrarPaciente(paciente){
 
     const options = {
         method: "POST",
-        body: paciente,
+        body: JSON.stringify(paciente),
         headers: {
             "Content-Type": "application/json"
         }

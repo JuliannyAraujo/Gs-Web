@@ -1,5 +1,6 @@
 import Link from 'next/link';
-// Estilos
+import Footer from './components/Footer';
+
 const navStyle = {
   background: '#d2f4e8', // Verde claro
   padding: '1px',
@@ -134,6 +135,7 @@ const Home = () => (
           </div>
         </div>
       </div>
+      <Footer/>
     </section>
   </>
 );

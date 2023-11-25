@@ -1,16 +1,43 @@
+import { loginPaciente } from '@/actions/login';
 import Link from 'next/link';
-import React from 'react';
 
 export default function LoginPage() {
-  const fazerLogin = () => {
-    console.log('Login bem-sucedido!');
+  const [messagem, setMessage] = useState("")
+
+  async function fazerLogin() {
+
+    const formData = new FormData(event.target);
+    const cpf = formData.get('cpf');
+    const senha = formData.get('senha');
+
+    if (!cpf || !senha) {
+      console.error("Por favor, forneça CPF e senha.");
+      return;
+    }
+
+    const resultadoLogin = await loginPaciente(cpf, senha);
+
+    if (resultadoLogin.error) {
+      setMessage(resultadoLogin.error);
+      return;
+    } else {
+      setMensagem(resultadoLogin.ok);
+
+      setTimeout(() => {
+        router.push({
+          pathname: '/dadosPaciente',
+          query: { ...resultadoLogin.paciente, cpf }
+        });
+      }, 5000);
+    }
+
   };
 
   return (
     <div className="login">
       <section id="content">
         <h2>Login</h2>
-        <form id="login-form">
+        <form onSubmit={fazerLogin} id="login-form">
           <div className="form-group">
             <label htmlFor="cpf">Digite seu CPF:</label>
             <input type="text" id="cpf" name="cpf" required />
@@ -27,6 +54,9 @@ export default function LoginPage() {
 
       <p>Ainda não tem uma conta? <Link href="/criarConta">Crie uma conta</Link></p>
 
+      <div>
+        <h3>{messagem}</h3>
+      </div>
       <style jsx>{`
         .login {
           background-color: #f0f0f0;

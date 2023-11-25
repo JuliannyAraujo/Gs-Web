@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Navigation from './Navigation';
 import { cadastrarPaciente } from '@/actions/cadastro';
+import Link from 'next/link';
+import { useState } from 'react';
+import Navigation from './Navigation';
 
 export default function CriarConta() {
   const [messagem, setMessage] = useState("")
 
-  async function handleSubmit(event) {
+  async function cadastro(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -18,11 +18,7 @@ export default function CriarConta() {
       senha: formData.get('senha'),
     };
 
-    console.log(paciente);
-
     const resp = await cadastrarPaciente(paciente);
-
-    console.log(resp);
 
     if (resp.error) {
       setMessage(resp.error);
@@ -37,7 +33,7 @@ export default function CriarConta() {
       <Navigation />
       <section id="content">
         <h2>Crie uma Conta</h2>
-        <form onSubmit={handleSubmit} id="crie-uma-conta-form">
+        <form onSubmit={cadastro} id="crie-uma-conta-form">
           <div className="form-group">
             <label htmlFor="nome">Nome Completo:</label>
             <input type="text" id="nome" name="nome" required />
